@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,6 +44,7 @@ public class MainActivity extends Activity {
         protectedPackages.add("com.maple.appforcestop");
         protectedPackages.add("com.tencent.mobileqq");
         protectedPackages.add("com.tencent.mm");
+        protectedPackages.add("com.baidu.input");
     }
     
     private void killProcesses(String packname) {
@@ -72,6 +74,7 @@ public class MainActivity extends Activity {
             e.printStackTrace();
             Log.d(tag, e.toString());
         }
+        Toast.makeText(this, "应用强制停止执行完成！", Toast.LENGTH_LONG).show();
     }
     
     public String execCommand(String command) throws IOException {
